@@ -1,0 +1,26 @@
+/* Value map */
+$breakpoints: (
+    'extra-large-and-up': ( min-width: $xl),
+    'extra-large-and-down': ( max-width: $xl),
+    'large-and-up': ( min-width: $lg ),
+    'large-and-down': ( max-width: $lg ),
+    'large-only': (( max-width: $xl ) and ( min-width: $lg )),
+    'medium-and-up': ( min-width: $md ),
+    'medium-and-down': ( max-width: $md ),
+    'medium-only': (( max-width: $lg ) and ( min-width: $md )),
+    'small-and-up': ( min-width: $xs ),
+    'small-and-down': ( max-width: $xs ),
+    'small-only': (( max-width: $md) and ( min-width: $xs )),
+);
+
+/* Function */
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Não foi possível encontrar um breakpoint com o nome `#{$name}`.";
+    }
+}
