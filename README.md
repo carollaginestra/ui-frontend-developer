@@ -8,7 +8,7 @@ It's a responsive menu
 
 ## Online version
 
-[click here](https://carollaginestra.github.io/*/)
+[click here](https://carollaginestra.github.io/ui-frontend-developer)
 
 ## Installing
 
