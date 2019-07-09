@@ -3,7 +3,8 @@ const { src, dest, watch, parallel, series } = require('gulp'),
     sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
-    plumber = require('gulp-plumber'),
+    imagemin = require('gulp-imagemin'),
+    clean = require('gulp-clean'),
     sourcemaps = require('gulp-sourcemaps'),
     browserify = require('browserify'),
     babelify = require('babelify'),
@@ -69,19 +70,31 @@ function js(done) {
 
 }
 
-function triggerPlumber( src_file, dest_file ) {
-	return src( src_file )
-		.pipe( plumber() )
-		.pipe( dest( dest_file ) );
-}
-
-function img() {
-	return triggerPlumber( '/src/img/**/*', './dist/img/' );
+// const copy = series(clean, function() {
+function copy() {
+    return src('src/img')
+        .pipe(dest('dist'));
 };
 
+function cleanimg() {
+    return src('dist/img')
+        .pipe(clean());
+};
+
+// const img = series(copy, function() {
+function imgmin() {
+    return src('src/img/**/*') 
+        .pipe(imagemin([
+            imagemin.optipng({optimizationLevel: 5})
+        ]))
+        .pipe(dest('dist/img'));
+};
 
     
 exports.js = js;
 exports.css = css;
-exports.img = img;
-exports.default = parallel(css, js, img);
+exports.cleanimg = cleanimg;
+exports.imgmin = imgmin;
+const build = series(cleanimg, copy, imgmin);
+exports.default = parallel(css, js, imgmin);
+exports.build = build;
