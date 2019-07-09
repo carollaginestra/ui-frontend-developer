@@ -39,3 +39,7 @@ $ npm run gulp
 * Javascript 
 * SASS
 * Gulp
+
+## Difficulties
+
+It took me a longer time to perform the test because I had to see the operation of the gulp 4 version, since I always used gulp 3.9.x.
