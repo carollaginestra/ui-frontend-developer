@@ -1,6 +1,16 @@
 body {
-    background: $secondary-color;
+	font: {
+		size: 100%;
+		family: $primary-font;
+    }
+    
+	background: $secondary-color;
     font-size: 16px;
+    color: $secondary-color;
+
+	&.overflow-hidden {
+		overflow: hidden;
+	}
 }
 
 .container {
@@ -18,4 +28,72 @@ body {
     @include breakpoint('extra-large-and-up') {
         width: 1170px;
     }
+}
+
+a {
+	color: $secondary-color;
+    text-decoration: none;
+    
+    &:hover {
+        color: red;
+    }
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.overlay{
+    position: fixed;
+    min-height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+
+    &.is-visible {
+        display: block;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-content--between {
+    justify-content: space-between;
+}
+
+
+.align-items--center {
+    align-items: center;
+}
+
+.hidden-md {
+    @include breakpoint('extra-large-and-down') {
+        display: none;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img--replace {
+	display: inline-block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
 }
