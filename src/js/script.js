@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 	//if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
 	var $L = 1200,
-		$menu_navigation = $('#navbar'),
+		$navigation = $('#navbar'),
 		$cart_trigger = $('#cart-trigger'),
 		$hamburger_icon = $('#hamburger-menu'),
 		$lateral_cart = $('#cart'),
@@ -12,14 +12,14 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		//close cart panel (if it's open)
 		$lateral_cart.removeClass('speed-in');
-		toggle_panel_visibility($menu_navigation, $shadow_layer, $('body'));
+		toggle_panel_visibility($navigation, $shadow_layer, $('body'));
 	});
 
 	//open cart
 	$cart_trigger.on('click', function(event){
 		event.preventDefault();
 		//close lateral menu (if it's open)
-		$menu_navigation.removeClass('speed-in');
+		$navigation.removeClass('speed-in');
 		toggle_panel_visibility($lateral_cart, $shadow_layer, $('body'));
 	});
 
@@ -31,9 +31,9 @@ jQuery(document).ready(function($){
 			$lateral_cart.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 				$('body').removeClass('overflow-hidden');
 			});
-			$menu_navigation.removeClass('speed-in');
+			$navigation.removeClass('speed-in');
 		} else {
-			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+			$navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 				$('body').removeClass('overflow-hidden');
 			});
 			$lateral_cart.removeClass('speed-in');
@@ -42,12 +42,12 @@ jQuery(document).ready(function($){
 
 	//move #main-navigation inside header on laptop
 	//insert #main-navigation after header on mobile
-	move_navigation( $menu_navigation, $L);
+	move_navigation( $navigation, $L);
 	$(window).on('resize', function(){
-		move_navigation( $menu_navigation, $L);
+		move_navigation( $navigation, $L);
 		
-		if( $(window).width() >= $L && $menu_navigation.hasClass('speed-in')) {
-			$menu_navigation.removeClass('speed-in');
+		if( $(window).width() >= $L && $navigation.hasClass('speed-in')) {
+			$navigation.removeClass('speed-in');
 			$shadow_layer.removeClass('is-visible');
 			$('body').removeClass('overflow-hidden');
 		}
@@ -71,12 +71,12 @@ function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
 	}
 }
 
-function move_navigation( $navigation, $MQ) {
+function move_navigation( $nav, $MQ) {
 	if ( $(window).width() >= $MQ ) {
-		$navigation.detach();
-		$navigation.appendTo('header');
+		$nav.detach();
+		$nav.appendTo('header');
 	} else {
-		$navigation.detach();
-		$navigation.insertAfter('header');
+		$nav.detach();
+		$nav.insertAfter('header');
 	}
 }
