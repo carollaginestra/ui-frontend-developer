@@ -26,14 +26,115 @@
 
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                test
-            </div>
-        </nav>
-    </header>
+    <header class="header">
+        <div class="container header__content">
+            <div class="flex justify-content--between hidden--md">
+                <div class="text--left border-item">
+                    Bem vindo! <a href="#!" class="bold">Já é cadastrado?</a>
+                </div>
 
+                <div class="text--right border-item">
+                    <div class="inline">
+                        Meus pedidos
+                    </div>
+                    <div class="inline">
+                        Central de atendimento
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo">
+                <img src="dist/img/logo.png" alt="Logo" class="inline logo__img">
+            </div>
+
+            <button id="hamburger-menu" class="menu--icon" type="button" aria-label="Toggle navigation">
+                <span class="menu--icon__link"></span>
+            </button>
+
+            <button id="user" class="user--icon" aria-label="Logout">
+                <span class="user--icon__link"></span>
+            </button>
+
+            <button id="cart-trigger" class="cart--icon" type="button" aria-label="Cart">
+                <span class="cart--icon__link"></span>
+            </button>
+
+        </div>
+    </header>
+    
+    <form class="search" id="search" style="display: none">
+        <div class="cont">
+            <input type="search" placeholder="Search" class="search__input">
+        </div>
+    </form>
+
+    <nav id="navbar" class="nav">
+        <div class="cont">
+            <ul class="flex justify-content--between nav__list">
+                <li class="nav__item">
+                    <a href="#0" class="nav__link">Rosto</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#0" class="nav__link">Cabelo</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#0" class="current nav__link">Corpo e banho</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#0" class="nav__link">Barba</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#0" class="nav__link">Acessórios</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#0" class="nav__link">Kits e presentes</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="overlay"></div>
+    
+    <div id="cart" class="cart">
+        <h2>Carrinho</h2>
+        <ul class="cart__list">
+            <li class="cart__item flex justify-content--between">
+                <div>
+                    <span class="cart__qty">1x</span> Gel para cabelo
+                    <div class="cart__price">R$15.99</div>
+                </div>
+                <a href="#0" class="cart__item--remove">Remover</a>
+            </li>
+
+            <li class="cart__item flex justify-content--between">
+                <div>
+                    <span class="cart__qty">2x</span> Creme para pentear
+                    <div class="cart__price">R$19.98</div>
+                </div>
+                <a href="#0" class="cart__item--remove">Remover</a>
+            </li>
+
+            <li class="cart__item flex justify-content--between">
+                <div>
+                    <span class="cart__qty">1x</span> Barbeador
+                    <div class="cart__price">R$28.99</div>
+                </div>
+                <a href="#0" class="cart__item--remove">Remover</a>
+            </li>
+        </ul> 
+
+        <div class="cart__total">
+            <p>Total <span>R$ 64,96</span></p>
+        </div> 
+
+        <a href="#0" class="cart__button--checkout">Comprar</a>
+        
+        <p class="text--center">
+            <a href="#0">Ver carrinho</a>
+        </p>
+    </div> <!-- cart -->
+
+    <script src="dist/js/jquery.min.js"></script>
     <script src="dist/js/script.min.js"></script>
 </body>
 </html>
