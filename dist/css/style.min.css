@@ -431,7 +431,6 @@ header {
     position: relative; }
 
 .logo {
-  padding-top: 5px;
   text-align: center; }
   @media (min-width: 1200px) {
     .logo {
@@ -443,6 +442,9 @@ header {
       -ms-transform: translate(-50%);
       transform: translate(-50%);
       z-index: 5; } }
+  @media (max-width: 1200px) {
+    .logo .logo__img {
+      width: 40px; } }
 
 .border-item {
   border-bottom: 1px solid #fff;

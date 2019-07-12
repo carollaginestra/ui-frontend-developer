@@ -21,8 +21,7 @@ header {
 }
 
 .logo {
-    padding-top: 5px;
-    text-align: center;
+	text-align: center;
 	
 	@include breakpoint('extra-large-and-up') {
 		padding-top: 20px;
@@ -31,6 +30,12 @@ header {
 		top: 0;
 		transform: translate(-50%);
 		z-index: 5;
+	}
+
+	.logo__img {
+		@include breakpoint('extra-large-and-down') {
+			width: 40px;
+		}
 	}
 }
 
