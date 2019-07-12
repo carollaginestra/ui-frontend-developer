@@ -42,4 +42,5 @@ $ npm run gulp taskname
 
 ## Difficulties
 
-It took me a longer time to perform the test because I had to see the operation of the gulp 4 version, since I always used gulp 3.9.x.
+It took me a longer time to perform the test because I had to see the operation of the gulp 4 version, since I always used gulp 3.9.x.;
+The structure of the layout, lines close to logo and menu spacing;
