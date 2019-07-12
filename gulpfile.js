@@ -6,12 +6,13 @@ const { src, dest, watch, parallel, series } = require('gulp'),
     imagemin = require('gulp-imagemin'),
     clean = require('gulp-clean'),
     sourcemaps = require('gulp-sourcemaps'),
+    notify  = require('gulp-notify'),
     uglify = require('gulp-uglify');
 
 function browser_sync() {
 	return browserSync.init({
 		server: {
-			baseDir: './dist/'
+			baseDir: '.'
 		}
     });
 }
@@ -68,6 +69,14 @@ function imgmin() {
         .pipe( browserSync.stream() );
 };
 
+
+function watch_files() {
+	watch('./src/sass/**/*.scss', series(css, reload));
+	watch('./src/js/*.js', series(js, reload));
+	watch('./src/img/*.*', series(imgmin, reload));
+	src('./dist/js/' + 'script.min.js')
+		.pipe( notify({ message: 'Gulp is Watching' }) );
+}
     
 exports.js = js;
 exports.css = css;
@@ -76,3 +85,4 @@ exports.imgmin = imgmin;
 const build = series(cleanimg, copy, imgmin);
 exports.default = parallel(css, js, imgmin);
 exports.build = build;
+exports.watch = parallel(browser_sync, watch_files);
