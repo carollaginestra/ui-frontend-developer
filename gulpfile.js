@@ -26,9 +26,8 @@ function css() {
 
     return src('src/sass/style.scss')
         .pipe(sourcemaps.init())
-        .pipe( sass({
-            errLogToConsole: true,
-            outputSyle: 'compressed'
+        .pipe(sass({
+            outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(rename({ suffix: '.min'}))
         .pipe(autoprefixer({
