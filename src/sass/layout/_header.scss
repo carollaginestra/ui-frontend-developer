@@ -40,7 +40,7 @@ header {
 }
 
 .border-item {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $secondary-color;
     padding-bottom: 15px;
     width: calc(50% - 105px);
 	justify-content: end;
@@ -149,7 +149,7 @@ header {
 
 .nav {
     left: -100%;
-    background: #212121;
+    background: lighten( $primary-color, 10% );
     -webkit-transition: left 0.3s;
     -moz-transition: left 0.3s;
 	transition: left 0.3s;
@@ -161,7 +161,7 @@ header {
 		left: auto;
 		right: auto;
 		padding-top: 0;
-		background: #141414;
+		background: lighten( $primary-color, 10% );
 		box-shadow: none;
 		z-index: 4;
 		top: 160px;
@@ -183,7 +183,7 @@ header {
 		}
 
 		.current {
-			box-shadow: inset 3px 0 #2196f3;
+			box-shadow: inset 3px 0 $terciary-color;
 		}
 
 		.nav__item {
@@ -225,7 +225,7 @@ header {
 
 					&.current {
 						box-shadow: none;
-						color: #FFF;
+						color: $secondary-color;
 					}
 				}
 			}
@@ -236,7 +236,7 @@ header {
 
 .cart {
     right: -100%;
-    background: #212121;
+    background: lighten( $primary-color, 10% );
 	transition: right 0.3s;
 
 	&.speed-in {
@@ -266,11 +266,11 @@ header {
 
 	.cart__price {
 		margin-top: .4em;
-		color: #a5aebc;
+		color: $text-color;
 	}
 
 	.cart__qty {
-		color: #a5aebc;
+		color: $text-color;
 	}
 
 	.cart__total {
@@ -294,7 +294,7 @@ header {
 		height: 60px;
 		line-height: 60px;
 		background: #4CAF50;
-		color: #FFF;
+		color: $secondary-color;
         text-align: center;
         font-weight: 600;
         text-transform: uppercase;
@@ -317,7 +317,7 @@ header {
         color: transparent;
         cursor: pointer;
         box-sizing: border-box;
-        background-color: #fff;
+        background-color: $secondary-color;
         margin-top: 10px;
 
         @include breakpoint('extra-large-and-up') {
@@ -332,17 +332,17 @@ header {
 
         &:focus {
             padding-left: 45px;
-            color: #000;
+            color: $primary-color;
             cursor: auto;
 
             @include breakpoint('extra-large-and-up') {
                 width: 26%;
-                background-color: #fff;
+                background-color: $secondary-color;
             }
         }
 
         &:hover {
-            background-color: #fff;
+            background-color: $secondary-color;
         }
 
         &:-moz-placeholder, &::-webkit-input-placeholder {
