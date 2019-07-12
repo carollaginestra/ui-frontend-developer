@@ -5,7 +5,7 @@ body {
     }
     
 	background: $secondary-color;
-    font-size: 16px;
+    font-size: 14px;
     color: $secondary-color;
 
 	&.overflow-hidden {
@@ -35,8 +35,12 @@ a {
     text-decoration: none;
     
     &:hover {
-        color: red;
+        color: #2196f3;
     }
+}
+
+ul {
+    list-style: none;
 }
 
 .responsive-img {
@@ -73,21 +77,21 @@ a {
     align-items: center;
 }
 
-.hidden-md {
+.hidden--md {
     @include breakpoint('extra-large-and-down') {
         display: none;
     }
 }
 
-.text-right {
+.text--right {
     text-align: right;
 }
 
-.text-left {
+.text--left {
     text-align: left;
 }
 
-.text-center {
+.text--center {
     text-align: center;
 }
 
@@ -96,4 +100,12 @@ a {
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.inline {
+    display: inline;
 }
