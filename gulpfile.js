@@ -13,16 +13,13 @@ const { src, dest, watch, parallel, series } = require('gulp'),
     uglify = require('gulp-uglify'),
     notify = require( 'gulp-notify' );
 
-const jsFiles = ['script.js'];
 
-function browser_sync(done) {
-	browserSync.init({
+function browser_sync() {
+	return browserSync.init({
 		server: {
 			baseDir: './dist/'
 		}
     });
-    
-    done();
 }
 
 function reload(done) {
@@ -48,29 +45,16 @@ function css() {
         .pipe(browserSync.stream());
 } 
 
-function js(done) {
-    jsFiles.map(function (entry) {
-        return browserify({
-            entries: ['src/js/' + entry]
-        })
-        .transform(babelify, {presets: ['env']})
-        .bundle()
-        .pipe(source(entry))
+function js() {
+    return src(['src/js/jquery.js','src/js/script.js'])        
         .pipe(rename({extname: '.min.js'}))
-        .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify().on('error', console.error))
         .pipe(sourcemaps.write('.'))
         .pipe( dest('dist/js'))
         .pipe( browserSync.stream() );
-
-    })
-
-    done();
-
 }
 
-// const copy = series(clean, function() {
 function copy() {
     return src('src/img')
         .pipe(dest('dist'));
@@ -81,13 +65,13 @@ function cleanimg() {
         .pipe(clean());
 };
 
-// const img = series(copy, function() {
 function imgmin() {
     return src('src/img/**/*') 
         .pipe(imagemin([
             imagemin.optipng({optimizationLevel: 5})
         ]))
-        .pipe(dest('dist/img'));
+        .pipe(dest('dist/img'))
+        .pipe( browserSync.stream() );
 };
 
     
