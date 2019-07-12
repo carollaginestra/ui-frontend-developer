@@ -28,40 +28,48 @@
 
     <header class="header">
         <div class="container header__content">
-            <div class="flex justify-content--between hidden-md">
-                <div class="text-left hidden-md">
-                    Bem vindo! <a href="#!">Já é cadastro?</a>
+            <div class="flex justify-content--between hidden--md">
+                <div class="text--left border-item">
+                    Bem vindo! <a href="#!" class="bold">Já é cadastrado?</a>
                 </div>
 
-                <div class="text-right hidden-md">
-                    <div>
+                <div class="text--right border-item">
+                    <div class="inline">
                         Meus pedidos
                     </div>
-                    <div>
+                    <div class="inline">
                         Central de atendimento
                     </div>
                 </div>
             </div>
 
             <div class="logo">
-                <img src="dist/img/logo-shield.png" alt="Logo">
+                <img src="dist/img/logo.png" alt="Logo" class="inline">
             </div>
 
-            
-            <!-- <div id="hamburger-menu" class="menu--icon">
-                <a class="cd-img-replace menu--icon__link" href="#0">a</a>
-            </div>
-            <div id="cart-trigger" class="cart--icon">
-                <a class="cd-img-replace cart--icon__link" href="#0">c</a>
-            </div> -->
-            <div id="hamburger-menu"><a class="cd-img-replace" href="#0">Menu</a></div>
-		    <div id="cart-trigger"><a class="cd-img-replace" href="#0">Cart</a></div>
+            <button id="hamburger-menu" class="menu--icon" type="button" aria-label="Toggle navigation">
+                <span class="menu--icon__link"></span>
+            </button>
+
+            <button id="user" class="user--icon" aria-label="Logout">
+                <span class="user--icon__link"></span>
+            </button>
+
+            <button id="cart-trigger" class="cart--icon" type="button" aria-label="Cart">
+                <span class="cart--icon__link"></span>
+            </button>
 
         </div>
     </header>
     
+    <form class="search" id="search" style="display: none">
+        <div class="cont">
+            <input type="search" placeholder="Search" class="search__input">
+        </div>
+    </form>
+
     <nav id="navbar" class="nav">
-        <div class="container">
+        <div class="cont">
             <ul class="flex justify-content--between nav__list">
                 <li class="nav__item">
                     <a href="#0" class="nav__link">Rosto</a>
@@ -88,39 +96,45 @@
     <div class="overlay"></div>
     
     <div id="cart" class="cart">
-        <h2>Cart</h2>
+        <h2>Carrinho</h2>
         <ul class="cart__list">
-            <li class="cart__item">
-                <span class="cart__qty">1x</span> Product Name
-                <div class="cart__price">$9.99</div>
-                <a href="#0" class="cart__item--remove cd-img-replace">Remover</a>
+            <li class="cart__item flex justify-content--between">
+                <div>
+                    <span class="cart__qty">1x</span> Gel para cabelo
+                    <div class="cart__price">R$15.99</div>
+                </div>
+                <a href="#0" class="cart__item--remove">Remover</a>
             </li>
 
-            <li class="cart__item">
-                <span class="cart__qty">2x</span> Product Name
-                <div class="cart__price">$19.98</div>
-                <a href="#0" class="cart__item--remove cd-img-replace">Remover</a>
+            <li class="cart__item flex justify-content--between">
+                <div>
+                    <span class="cart__qty">2x</span> Creme para pentear
+                    <div class="cart__price">R$19.98</div>
+                </div>
+                <a href="#0" class="cart__item--remove">Remover</a>
             </li>
 
-            <li class="cart__item">
-                <span class="cart__qty">1x</span> Product Name
-                <div class="cart__price">$9.99</div>
-                <a href="#0" class="cart__item--remove cd-img-replace">Remover</a>
+            <li class="cart__item flex justify-content--between">
+                <div>
+                    <span class="cart__qty">1x</span> Barbeador
+                    <div class="cart__price">R$28.99</div>
+                </div>
+                <a href="#0" class="cart__item--remove">Remover</a>
             </li>
-        </ul> <!-- cd-cart-items -->
+        </ul> 
 
         <div class="cart__total">
-            <p>Total <span>$39.96</span></p>
-        </div> <!-- cd-cart-total -->
+            <p>Total <span>R$ 64,96</span></p>
+        </div> 
 
         <a href="#0" class="cart__button--checkout">Comprar</a>
         
-        <p class="text-center">
+        <p class="text--center">
             <a href="#0">Ver carrinho</a>
         </p>
-    </div> <!-- cd-cart -->
+    </div> <!-- cart -->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="dist/js/jquery.min.js"></script>
     <script src="dist/js/script.min.js"></script>
 </body>
 </html>
