@@ -21,7 +21,7 @@
     <meta name="theme-color" content="#000"/>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="dist/css/style.min.css">
 
 </head>
@@ -49,9 +49,11 @@
                 </div>
             </div>
 
-            <div class="logo">
+            <picture class="logo">
+                <source media="(min-width: 1200px)" srcset="dist/img/logo.png">
+                <source media="(max-width: 1199px)" srcset="dist/img/Lorem-Ipsum.png">
                 <img src="dist/img/logo.png" alt="Logo" class="inline logo__img">
-            </div>
+            </picture>
 
             <button id="hamburger-menu" class="menu--icon" type="button" aria-label="Toggle navigation">
                 <span class="menu--icon__link"></span>
