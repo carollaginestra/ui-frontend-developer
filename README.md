@@ -8,7 +8,7 @@ It's a responsive menu
 
 ## Online version
 
-[click here](https://carollaginestra.github.io/*/)
+[click here](https://carollaginestra.github.io/ui-frontend-developer)
 
 ## Installing
 
@@ -30,7 +30,7 @@ $ localhost/ui-frontend-developer/index.html
 
 To run the gulp task automator, simply run the code and the task that you want
 ```sh
-$ npm run gulp 
+$ npm run gulp taskname
 ```
 
 ## Built With
