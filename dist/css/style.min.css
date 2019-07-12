@@ -402,10 +402,16 @@ ul {
   white-space: nowrap; }
 
 .bold {
-  font-weight: 700; }
+  font-weight: 600; }
 
 .inline {
   display: inline; }
+
+.margin--right {
+  margin-right: 15px; }
+
+.padding--10 {
+  padding: 10px; }
 
 /*
 This file is used to contain all component imports.
@@ -452,7 +458,8 @@ header {
   width: calc(50% - 105px);
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: end; }
+  justify-content: end;
+  font-size: 10px; }
 
 .user--icon, .menu--icon, .cart--icon {
   position: absolute;
@@ -642,7 +649,7 @@ header {
     background: #4CAF50;
     color: #FFF;
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase; }
 
 .search .search__input {

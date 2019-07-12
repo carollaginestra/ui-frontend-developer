@@ -103,9 +103,17 @@ ul {
 }
 
 .bold {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .inline {
     display: inline;
+}
+
+.margin--right {
+    margin-right: 15px;
+}
+
+.padding--10 {
+    padding: 10px;
 }
