@@ -6,13 +6,7 @@ const { src, dest, watch, parallel, series } = require('gulp'),
     imagemin = require('gulp-imagemin'),
     clean = require('gulp-clean'),
     sourcemaps = require('gulp-sourcemaps'),
-    browserify = require('browserify'),
-    babelify = require('babelify'),
-    source = require('vinyl-source-stream'),
-    buffer = require('vinyl-buffer'),
-    uglify = require('gulp-uglify'),
-    notify = require( 'gulp-notify' );
-
+    uglify = require('gulp-uglify');
 
 function browser_sync() {
 	return browserSync.init({
