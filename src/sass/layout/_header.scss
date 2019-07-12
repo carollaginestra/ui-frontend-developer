@@ -43,7 +43,8 @@ header {
     border-bottom: 1px solid #fff;
     padding-bottom: 15px;
     width: calc(50% - 105px);
-    justify-content: end;
+	justify-content: end;
+	font-size: 10px;
 }
 
 .user--icon, .menu--icon, .cart--icon {
@@ -295,7 +296,7 @@ header {
 		background: #4CAF50;
 		color: #FFF;
         text-align: center;
-        font-weight: 700;
+        font-weight: 600;
         text-transform: uppercase;
 	}
 }
